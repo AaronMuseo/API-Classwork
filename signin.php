@@ -1,8 +1,8 @@
 <?php
-//include the class file
+// include the class file
 require 'ClassAutoLoad.php';
 
-//call the methods
+// call the methods
 $layouts->heading($conf);
-$forms->signup();
+$forms->login();
 $layouts->footer($conf);

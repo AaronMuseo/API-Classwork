@@ -1,11 +1,9 @@
 <?php
-class structure{
-    
-    public function heading(){
-        echo "<h1>Welcome to BBIT E</h1>";
+class layouts {
+    public function heading($conf) {
+        print "<h1>Welcome to {$conf['site_name']}</h1>";
     }
-    public function footer(){
-        echo "<footer>&copy;" . date("Y") . "BBIT E. All rights reserved. </footer>";
-    }
+    public function footer($conf) {
+        print "<footer>Copyrights &copy; " . date("Y") . " {$conf['site_name']}. All rights reserved.</footer>";
+    }   
 }
-

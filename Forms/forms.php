@@ -1,22 +1,30 @@
 <?php
-class form {
-    public function displayForm() {
-        echo '
-        <form method="post" action="">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name" required>
-            <br><br>
+class forms{
 
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" required>
-            <br><br>
+    private function submit_button($text){
+        print "<input type='submit' value='$text'>";
+    }
 
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" required>
-            <br><br>
-
-            <input type="submit" name="submit" value="Register">
+    public function signup(){
+        ?>
+        <h2>Sign Up Form</h2>
+        <form action='form.php' method='post'>
+            Name: <input type='text' name='name'><br><br>
+            Email: <input type='email' name='email'><br><br>
+            Password: <input type='password' name='password'><br><br>
+            <?php $this->submit_button('Sign Up'); ?> <a>Already a member? <a href='signin.php'>Login here</a></a>
         </form>
-        ';
+        <?php
+    }
+
+    public function login(){
+        ?>
+        <h2>Login Form</h2>
+        <form action='form.php' method='post'>
+            Email: <input type='email' name='email'><br><br>
+            Password: <input type='password' name='password'><br><br>
+            <?php $this->submit_button('Login'); ?> <a>Not a member? <a href='index.php'>Sign up here</a></a>
+        </form>
+        <?php
     }
 }

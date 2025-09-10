@@ -1,4 +1,7 @@
 <?php
+require 'conf.php';
+
+// autoload classes from specified directories
 $directory = ["Forms", "Globals", "Layouts"];
 
 spl_autoload_register(function ($class_name) use ($directory) {
@@ -10,3 +13,7 @@ spl_autoload_register(function ($class_name) use ($directory) {
         }
     }
 });
+
+// create an instance of the class
+$layouts = new layouts($conf);
+$forms = new forms();
