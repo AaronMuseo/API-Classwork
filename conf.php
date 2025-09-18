@@ -1,4 +1,5 @@
 <?php
+
 //site information
 $conf['site_name'] = "BBIT E";
 $conf['site_url'] = "http://localhost/API-Classwork";
@@ -21,3 +22,4 @@ $conf['smtp_user']   = "museo.aaron141@gmail.com";
 $conf['smtp_pass']   = "ywtx wfhr arcp tycc"; // <-- Your Gmail App Password
 $conf['smtp_port']   = 465;
 $conf['smtp_secure'] = "ssl"; // options: ssl, tls
+

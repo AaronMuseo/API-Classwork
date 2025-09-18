@@ -71,25 +71,56 @@ class layouts {
             </div>
             <?php
     }
-    public function form_content($conf, $ObjForms) {
+    public function form_content($conf, $ObjForms = null) {
 ?>
-
-            <div class="row align-items-md-stretch">
-               <div class="col-md-6">
-                  <div class="h-100 p-5 text-bg-dark rounded-3">
-<?php if($_SERVER['PHP_SELF'] == '/col/signup.php') {$ObjForms->signup();} elseif($_SERVER['PHP_SELF'] == '/col/signin.php') {$ObjForms->signin();} ?>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-                     <h2>Add borders</h2>
-                     <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-                     <button class="btn btn-outline-secondary" type="button">Example button</button> 
-                  </div>
-               </div>
+    <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+                <?php if (basename($_SERVER['PHP_SELF']) == 'signup.php') { ?>
+                    <h2 class="mb-3">Sign Up</h2>
+                    <form action="signup.php" method="post">
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label">Full Name</label>
+                            <input type="text" name="fullname" id="fullname" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                <?php } elseif (basename($_SERVER['PHP_SELF']) == 'signin.php') { ?>
+                    <h2 class="mb-3">Sign In</h2>
+                    <form action="signin.php" method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Login</button>
+                    </form>
+                <?php } ?>
             </div>
-            <?php
-    }
+        </div>
+
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+                <h2>Why Join Us?</h2>
+                <p>By signing up, you’ll get access to exclusive features and resources tailored to your needs.</p>
+                <button class="btn btn-outline-secondary" type="button">Learn More</button> 
+            </div>
+        </div>
+    </div>
+<?php
+}
+
     public function footer($conf) {
 ?>
             <footer class="pt-3 mt-4 text-body-secondary border-top">
