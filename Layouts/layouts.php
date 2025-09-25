@@ -16,38 +16,34 @@ class layouts {
    <body>
                 <?php
     }
-    public function navbar($conf) {
-                ?>
 
-      <main>
-         <div class="container py-4">
-            <header class="pb-3 mb-4 border-bottom">
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
-            <div class="container-fluid">
-               <a class="navbar-brand" href="#">Expand at lg</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
-               <div class="collapse navbar-collapse" id="navbarsExample05">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                     <li class="nav-item"> <a class="nav-link active" aria-current="page" href="./">Home</a> </li>
-                     <li class="nav-item"> <a class="nav-link" href="signup.php">Sign Up</a> </li>
-                     <li class="nav-item"> <a class="nav-link" href="signin.php">Sign In</a> </li>
-                  </ul>
-                  <form role="search"> <input class="form-control" type="search" placeholder="Search" aria-label="Search"> </form>
-               </div>
-            </div>
-         </nav>
-    
-            </header>
-               <?php
-    }
+   public function navbar($conf) {
+    ?>
+    <main>
+       <div class="container py-4">
+          <header class="pb-3 mb-4 border-bottom">
+             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                   <a class="navbar-brand" href="#">Welcome to Strathmore BBIT</a>
+                   <div class="d-flex w-100">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="./">Home</a></li>
+                         <li class="nav-item"><a class="nav-link" href="signup.php">Sign Up</a></li>
+                         <li class="nav-item"><a class="nav-link" href="signin.php">Sign In</a></li>
+                         <li class="nav-item"><a class="nav-link" href="admin.php">Admin Log in</a></li>
+                      </ul>
+                      <form class="d-flex" role="search">
+                         <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                      </form>
+                   </div>
+                </div>
+             </nav>
+          </header>
+    <?php
+}
     public function banner($conf) {
                ?>
-            <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-               <div class="container-fluid py-5">
-                  <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-                  <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-                  <button class="btn btn-primary btn-lg" type="button">Example button</button> 
-               </div>
-            </div>
+            
                <?php
     }
     public function content($conf) {
@@ -73,12 +69,15 @@ class layouts {
     }
     public function form_content($conf, $ObjForms = null) {
 ?>
+
+ 
     <div class="row align-items-md-stretch">
         <div class="col-md-6">
             <div class="h-100 p-5 text-bg-dark rounded-3">
                 <?php if (basename($_SERVER['PHP_SELF']) == 'signup.php') { ?>
+               
                     <h2 class="mb-3">Sign Up</h2>
-                    <form action="signup.php" method="post">
+                    <form action="signup.php" method="post"  >
                         <div class="mb-3">
                             <label for="fullname" class="form-label">Full Name</label>
                             <input type="text" name="fullname" id="fullname" class="form-control" required>
@@ -93,6 +92,7 @@ class layouts {
                         </div>
                         <button type="submit" class="btn btn-primary">Register</button>
                     </form>
+               
                 <?php } elseif (basename($_SERVER['PHP_SELF']) == 'signin.php') { ?>
                     <h2 class="mb-3">Sign In</h2>
                     <form action="signin.php" method="post">
@@ -109,15 +109,8 @@ class layouts {
                 <?php } ?>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-                <h2>Why Join Us?</h2>
-                <p>By signing up, you’ll get access to exclusive features and resources tailored to your needs.</p>
-                <button class="btn btn-outline-secondary" type="button">Learn More</button> 
-            </div>
-        </div>
     </div>
+
 <?php
 }
 
